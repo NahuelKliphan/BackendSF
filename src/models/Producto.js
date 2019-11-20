@@ -18,7 +18,7 @@ const Producto = database.define('productos', {
     },
 
     precioUnitario: {
-        type: Sequelize.NUMBER
+        type: Sequelize.INTEGER
     }
 
 })
