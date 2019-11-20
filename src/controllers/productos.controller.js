@@ -20,6 +20,7 @@ export async function crearProducto(req, res) {
       codigo: req.body.codigo,
       descripcion: req.body.descripcion,
       precioUnitario: req.body.precioUnitario
+
     });
   
     if(producto) {
@@ -46,7 +47,7 @@ export async function obtenerProducto(req, res) {
   
     if(producto) {
       res.json({
-        data: provincia
+        data: producto
       });
     } else {
       res.json({

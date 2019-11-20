@@ -3,7 +3,7 @@ import morgan from 'morgan';
 import database from './database/database';
 
 //importamos rutas
-import productosRuta from './routes/productos.route';
+import productosRutas from './routes/productos.route';
 
 //inicilizar express
 const app = express();
@@ -12,8 +12,9 @@ const app = express();
 app.use(morgan('dev'));
 app.use(express.json());
 
+
 //rutas
-app.use('/api/productos', productosRuta)
+app.use('/api/productos', productosRutas)
 
 //sincronizacion con la db
 //sacar force: true borra base

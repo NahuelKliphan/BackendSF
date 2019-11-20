@@ -1,12 +1,12 @@
 import { Router } from 'express';
-import { obtenerPoductos, crearPoducto, obtenerPoducto, borrarPoducto, modificarPoducto } from '../controllers/productos.controller';
+import { obtenerProductos, crearProducto, obtenerProducto, borrarProducto, modificarProducto } from '../controllers/productos.controller';
 
-const poductosRutas = Router();
+const productosRutas = Router();
 
-provinciasRutas.get('/', obtenerPoductos);
-provinciasRutas.get('/:idPoducto', obtenerPoducto);
-provinciasRutas.post('/', crearPoducto);
-provinciasRutas.put('/:idPoducto', modificarPoducto);
-provinciasRutas.delete('/:idPoducto', borrarPoducto);
+productosRutas.get('/', obtenerProductos);
+productosRutas.get('/:idProducto', obtenerProducto);
+productosRutas.post('/', crearProducto);
+productosRutas.put('/:idProducto', modificarProducto);
+productosRutas.delete('/:idProducto', borrarProducto);
 
-export default poductosRutas;
+export default productosRutas;

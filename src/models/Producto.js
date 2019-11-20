@@ -22,3 +22,5 @@ const Producto = database.define('productos', {
     }
 
 })
+
+export default Producto;
