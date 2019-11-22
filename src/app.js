@@ -4,6 +4,7 @@ import database from './database/database';
 
 //importamos rutas
 import productosRutas from './routes/productos.route';
+import clientesRutas from './routes/clientes.route';
 
 //inicilizar express
 const app = express();
@@ -12,10 +13,9 @@ const app = express();
 app.use(morgan('dev'));
 app.use(express.json());
 
-
 //rutas
-app.use('/api/productos', productosRutas)
-
+app.use('/api/productos', productosRutas);
+app.use('/api/clientes', clientesRutas)
 //sincronizacion con la db
 //sacar force: true borra base
 database.sync()

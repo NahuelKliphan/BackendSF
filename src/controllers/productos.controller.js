@@ -12,7 +12,6 @@ export async function obtenerProductos(req, res) {
     })
   }
 }
-
 export async function crearProducto(req, res) {
   
   try {
@@ -20,9 +19,7 @@ export async function crearProducto(req, res) {
       codigo: req.body.codigo,
       descripcion: req.body.descripcion,
       precioUnitario: req.body.precioUnitario
-
     });
-  
     if(producto) {
       res.status(201).json({
         data: producto
@@ -66,7 +63,6 @@ export async function borrarProducto(req, res) {
     const cantidadFilasBorradas = await Producto.destroy({
       where: { id: req.params.idProducto }
     })
-  
     res.json({
       data: {},
       message: `Se eliminaron ${cantidadFilasBorradas} productos`
