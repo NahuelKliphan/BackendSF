@@ -12,7 +12,6 @@ export async function obtenerClientes(req, res) {
     })
   }
 }
-
 export async function crearCliente(req, res) {
   
   try {
