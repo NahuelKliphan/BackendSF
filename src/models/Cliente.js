@@ -7,7 +7,7 @@ const Cliente = database.define('clientes',{
         primaryKey: true,
         autoIncrement: true
     },
-    codigo:{
+    nombre:{
         type: Sequalize.STRING
     },
     direccion:{

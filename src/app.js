@@ -16,6 +16,7 @@ app.use(express.json());
 //rutas
 app.use('/api/productos', productosRutas);
 app.use('/api/clientes', clientesRutas)
+
 //sincronizacion con la db
 //sacar force: true borra base
 database.sync()

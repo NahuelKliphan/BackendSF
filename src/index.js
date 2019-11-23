@@ -4,3 +4,4 @@ function main() {
   console.log("Server inicializado")
 };
 main();
+
