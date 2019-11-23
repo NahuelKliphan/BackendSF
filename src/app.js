@@ -20,9 +20,8 @@ app.use('/api/clientes', clientesRutas)
 
 //cors
 const cors = require('cors');
-app.use(cors(
-  config.application.cors.server
-))
+app.use(cors(config.application.cors.server));
+
 //sincronizacion con la db
 //sacar force: true borra base
 database.sync()
