@@ -6,6 +6,7 @@ import database from './database/database';
 import productosRutas from './routes/productos.route';
 import clientesRutas from './routes/clientes.route';
 
+const cors = require('cors');
 //load config to cors
 const config = require('./config');
 //inicilizar express
@@ -19,10 +20,11 @@ app.use('/api/productos', productosRutas);
 app.use('/api/clientes', clientesRutas)
 
 //cors
-const cors = require('cors');
-app.use(cors(
-  config.application.cors.server
-))
+var corsOptions = {
+  origin: 'localhost:4200',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+app.use(cors(corsOptions))
 //sincronizacion con la db
 //sacar force: true borra base
 database.sync()
