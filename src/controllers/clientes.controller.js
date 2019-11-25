@@ -13,7 +13,8 @@ export async function obtenerClientes(req, res) {
   }
 }
 export async function crearCliente(req, res) {
-  
+  console.log(req)
+  console.log(res)
   try {
     const cliente = await Cliente.create({
       nombre: req.body.nombre,

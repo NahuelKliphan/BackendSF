@@ -21,7 +21,5 @@ const Factura = database.define('facturas',{
     },
     clienteDireccion:{
         type: Sequalize.STRING
-    },
-    
-
+    } 
 })
