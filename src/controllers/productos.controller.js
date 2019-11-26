@@ -3,9 +3,10 @@ import Producto from '../models/Producto';
 export async function obtenerProductos(req, res) {
   try {
     const productos = await Producto.findAll();
-    res.json({
-      data: productos
-    });
+    res.json(
+        productos
+    );
+
   } catch (e) {
     res.status(500).json({
       error: e.message
@@ -43,9 +44,9 @@ export async function obtenerProducto(req, res) {
     });
   
     if(producto) {
-      res.json({
-        data: producto
-      });
+      res.json(
+        producto
+      );
     } else {
       res.json({
         data: {}
