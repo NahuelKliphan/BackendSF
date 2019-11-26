@@ -3,9 +3,9 @@ import Factura from '../models/Factura';
 export async function obtenerFacturas(req, res) {
     try {
         const facturas = await Factura.findAll();
-        res.json({
-            data: facturas
-        });
+        res.json(
+            facturas
+        );
     } catch (e) {
         res.status(500).json({
             error: e.message

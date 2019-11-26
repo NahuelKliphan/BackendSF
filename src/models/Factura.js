@@ -1,7 +1,9 @@
-import Sequalize from 'sequelize'
-import database from '../database/database'
+import Sequalize from 'sequelize';
+import database from '../database/database';
+
 
 const Factura = database.define('facturas',{
+    
     id:{
         type: Sequalize.INTEGER,
         primaryKey: true,
@@ -21,5 +23,6 @@ const Factura = database.define('facturas',{
     },
     clienteDireccion:{
         type: Sequalize.STRING
-    } 
+    }
+ 
 })
