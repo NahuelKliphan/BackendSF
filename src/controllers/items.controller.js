@@ -1,4 +1,6 @@
 import Item from '../models/Item';
+import Factura from '../models/Factura';
+
 
 export async function obtenerItems(req, res) {
   try {
@@ -21,19 +23,23 @@ export async function obtenerItems(req, res) {
 
 export async function crearItem(req,res){
   try{
+      var idFactura = await Factura.max('id').then(result => {
+      idFactura = result;
+    })
+    console.log(this.idFactura);
     const items = await Item.create({
-      codigo: req.codigo,
-      descripcion: req.descripcion,
-      precioUnitario: req.precioUnitario,
-      cantidad: req.cantidad,
-      iva: req.iva,
-      subtotal: req.subtotal
+      codigo: req.body.codigo,
+      descripcion: req.body.descripcion,
+      precioUnitario: req.body.precioUnitario,
+      cantidad: req.body.cantidad,
+      iva: req.body.iva,
+      subtotal: req.body.subtotal,
+      facturaId: idFactura
     });
     if (items){
       res.status(201).json(items)
     } else {
-      res.json({data: {}
-      })
+      res.json(items)
     }
   }
   catch (e){
