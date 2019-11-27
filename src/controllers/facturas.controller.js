@@ -14,14 +14,13 @@ export async function obtenerFacturas(req, res) {
 }
 
 export async function crearFactura(req, res) {
-
     try {
         const factura = await Factura.create({
             tipo: req.body.tipo,
             fecha: req.body.fecha,
-            clienteNombre: req.body.clienteNombre,
-            clienteCuit: req.body.clienteCuit,
-            clienteDireccion: req.body.clienteDireccion
+            clienteNombre: req.body.cliente.nombre,
+            clienteCuit: req.body.cliente.cuit,
+            clienteDireccion: req.body.cliente.direccion
         });
         if (factura) {
             res.status(201).json({

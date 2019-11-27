@@ -22,9 +22,9 @@ export async function crearCliente(req, res) {
       cuit: req.body.cuit
     });
     if(cliente) {
-      res.status(201).json({
-        data: cliente
-      });
+      res.status(201).json(
+         cliente
+      );
     } else {
       res.json({
         data: {}
@@ -44,9 +44,9 @@ export async function obtenerCliente(req, res) {
     });
   
     if(cliente) {
-      res.json({
-        data: cliente
-      });
+      res.json(
+        cliente
+      );
     } else {
       res.json({
         data: {}
@@ -88,9 +88,9 @@ export async function modificarCliente(req, res) {
         cuit: req.body.cuit
       })
 
-      res.json({
-        data: clienteModificado
-      })
+      res.json(
+         clienteModificado
+      )
     } else {
       res.status(404).json({
         data: {},

@@ -22,9 +22,9 @@ export async function crearProducto(req, res) {
       precioUnitario: req.body.precioUnitario
     });
     if(producto) {
-      res.status(201).json({
-        data: producto
-      });
+      res.status(201).json(
+         producto
+      );
     } else {
       res.json({
         data: {}
@@ -89,9 +89,9 @@ export async function modificarProducto(req, res) {
 
       })
 
-      res.json({
-        data: productoModificado
-      })
+      res.json(
+        productoModificado
+      )
     } else {
       res.status(404).json({
         data: {},

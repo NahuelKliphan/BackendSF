@@ -12,7 +12,6 @@ const Cliente = database.define('clientes',{
     },
     direccion:{
         type: Sequalize.STRING
-
     },
     cuit:{
         type: Sequalize.STRING

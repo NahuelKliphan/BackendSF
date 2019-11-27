@@ -1,5 +1,6 @@
 import Sequelize from 'sequelize';
 import database from '../database/database';
+import Factura from './Factura';
 
 const Item = database.define('items', {
     id:{
@@ -24,11 +25,10 @@ const Item = database.define('items', {
     },
     subtotal: {
         type: Sequelize.DECIMAL
-    },
-    factura_id: {
-        type: INTEGER
     }
-
 })
+Item.belongsTo(Factura,{
+    foreignKey: 'idFactura'     
+});
 
 export default Item;
