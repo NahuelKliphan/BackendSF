@@ -2,11 +2,16 @@ import Item from '../models/Item';
 
 export async function obtenerItems(req, res) {
   try {
-    const items = await Item.findAll();
-    res.json(
+    const items = await Item.findAll({
+      where: {idFactura: req.params.idFactura}
+    });
+   
+    if(items){
+      res.json(
         items
     );
-
+    }
+    
   } catch (e) {
     res.status(500).json({
       error: e.message
@@ -14,7 +19,7 @@ export async function obtenerItems(req, res) {
   }
 }
 
-export async function agregarItem(req,res){
+export async function crearItem(req,res){
   try{
     const items = await Item.create({
       codigo: req.codigo,

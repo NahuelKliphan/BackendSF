@@ -1,10 +1,13 @@
 import { Router } from 'express';
-import { obtenerFacturas, crearFactura, obtenerFactura, borrarFactura} from '../controllers/facturas.controller';
-import { defaultCipherList } from 'constants';
-import { agregarItem } from '../controllers/items.controller';
+import { obtenerItems, crearItem} from '../controllers/items.controller';
+
 
 const itemsRutas = Router()
 
-itemsRutas.post('/', agregarItem)
+itemsRutas.get('/:idFactura', obtenerItems);
+itemsRutas.post('/', crearItem);
 
-export default itemsRutas
+
+export default itemsRutas;
+
+
