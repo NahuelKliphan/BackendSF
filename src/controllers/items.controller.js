@@ -21,29 +21,38 @@ export async function obtenerItems(req, res) {
   }
 }
 
-export async function crearItem(req,res){
-  try{
-      var idFactura = await Factura.max('id').then(result => {
-      idFactura = result;
-    })
-    console.log(this.idFactura);
-    const items = await Item.create({
-      codigo: req.body.codigo,
-      descripcion: req.body.descripcion,
-      precioUnitario: req.body.precioUnitario,
-      cantidad: req.body.cantidad,
-      iva: req.body.iva,
-      subtotal: req.body.subtotal,
-      facturaId: idFactura
-    });
-    if (items){
-      res.status(201).json(items)
-    } else {
-      res.json(items)
-    }
-  }
-  catch (e){
 
+export async function crearItem(req, res) {
+  
+  const {codigo, cantidad, descripcion, precioUnitario, iva, subtotal} = req.body;
+  
+  var idFactura = await Factura.max('id');
+  try {
+      const item = await Item.create({
+          codigo,
+          cantidad,
+          descripcion,
+          precioUnitario,
+          iva,
+          subtotal,
+          idFactura
+      });
+
+      if (item) {
+          res.status(201).json(
+              item
+          );
+      } else {
+          res.json(
+              {}
+          );
+      }
   }
+  catch (e) {
+      res.status(500).json({
+          error: e.message
+      });
+  }
+
 }
 
