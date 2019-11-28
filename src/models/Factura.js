@@ -11,6 +11,9 @@ const Factura = database.define('facturas',{
     tipo:{
         type : Sequalize.STRING
     },
+    numero:{
+        type: Sequalize.STRING
+    },
     fecha:{
         type: Sequalize.DATE
     },
@@ -22,6 +25,9 @@ const Factura = database.define('facturas',{
     },
     clienteDireccion:{
         type: Sequalize.STRING
+    },
+    total: {
+        type:Sequalize.DECIMAL
     }
 })
 export default Factura

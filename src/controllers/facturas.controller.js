@@ -20,7 +20,9 @@ export async function crearFactura(req, res) {
             fecha: req.body.fecha,
             clienteNombre: req.body.cliente.nombre,
             clienteCuit: req.body.cliente.cuit,
-            clienteDireccion: req.body.cliente.direccion
+            clienteDireccion: req.body.cliente.direccion,
+            total: req.body.total,
+            numero: req.body.numero
         });
         if (factura) {
             res.status(201).json({
